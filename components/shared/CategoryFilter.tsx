@@ -29,7 +29,7 @@ const CategoryFilter = () => {
   }, [])
 
   const onSelectCategory = (category: string) => {
-      let newUrl = '';
+      let newUrl;
 
       if(category && category !== 'All') {
         newUrl = formUrlQuery({
@@ -44,7 +44,7 @@ const CategoryFilter = () => {
         })
       }
 
-      router.push(newUrl, { scroll: false });
+      router.push(newUrl  as string, { scroll: false });
   }
 
   return (
