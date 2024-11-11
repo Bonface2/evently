@@ -13,7 +13,7 @@ const Search = ({ placeholder = 'Search title...' }: { placeholder?: string }) =
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
-      let newUrl = '';
+      let newUrl;
 
       if(query) {
         newUrl = formUrlQuery({
@@ -28,7 +28,7 @@ const Search = ({ placeholder = 'Search title...' }: { placeholder?: string }) =
         })
       }
 
-      router.push(newUrl, { scroll: false });
+      router.push(newUrl as string, { scroll: false });
     }, 300)
 
     return () => clearTimeout(delayDebounceFn);
