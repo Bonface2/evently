@@ -21,15 +21,15 @@ const Checkout = ({ event, userId }: { event: IEvent, userId: string }) => {
   }, []);
 
   const onCheckout = async () => {
-    // const order = {
-    //   eventTitle: event.title,
-    //   eventId: event._id,
-    //   buyerId: userId,
-    //   price: event.price, // Assuming 'price' exists on the event object
-    //   isFree: event.isFree // Assuming 'isFree' exists on the event object
-    // };
+    const order = {
+      eventTitle: event.title,
+      eventId: event._id,
+      buyerId: userId,
+      price: event.price, // Assuming 'price' exists on the event object
+      isFree: event.isFree // Assuming 'isFree' exists on the event object
+    };
 
-    // await checkoutOrder(order);
+    await checkoutOrder(order);
     console.log("Checkout is temporarily disabled.");
   };
 
